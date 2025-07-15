@@ -9,7 +9,11 @@ export default function Footer() {
           <div className="flex flex-col items-start">
             <div className="flex items-center space-x-2 mb-4">
               <Video className="w-6 h-6" />
-              <span className="font-semibold">RunAsh AI<br/>Live Video Streaming Platform</span>
+              <span className="font-semibold">
+                RunAsh AI
+                <br />
+                Live Video Streaming Platform
+              </span>
             </div>
             <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} RunAsh AI. All rights reserved.
