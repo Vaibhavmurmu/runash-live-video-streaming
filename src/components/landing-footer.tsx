@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Video } from "lucide-react";
-import ThemeToggle from "@/components/ui/themetoggle";
+import ThemeToggle from "@/components/theme-toggle";
 
 export default function Footer() {
   return (
