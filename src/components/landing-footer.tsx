@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Video } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Footer() {
   return (
@@ -83,6 +83,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <ThemeToggle />
     </footer>
   );
 }
