@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { Video } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
