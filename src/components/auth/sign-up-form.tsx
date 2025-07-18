@@ -20,7 +20,7 @@ export function CardDemo() {
           Enter your email below to sign up to your account
         </CardDescription>
         <CardAction>
-          <Button variant="link">Login </Button>
+          <Button variant="link">Sign Up </Button>
         </CardAction>
       </CardHeader>
       <CardContent>
