@@ -15,16 +15,26 @@ export function CardDemo() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Sign Up to your account</CardTitle>
+        <CardTitle>Create Account</CardTitle>
         <CardDescription>
-          Enter your email below to sign up to your account
+          Create your RunAsh AI account to get started
         </CardDescription>
         <CardAction>
-          <Button variant="link">Sign Up </Button>
+          <Button variant="link">Login</Button>
         </CardAction>
       </CardHeader>
       <CardContent>
         <form>
+          <div className="flex flex-col gap-6">
+            <div className="grid gap-2">
+              <Label htmlFor="full name">Full Name</Label>
+              <Input
+                id="full name"
+                type="full name"
+                placeholder="your name"
+                required
+              />
+            </div>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
               <Label htmlFor="email">Email</Label>
@@ -52,10 +62,10 @@ export function CardDemo() {
       </CardContent>
       <CardFooter className="flex-col gap-2">
         <Button type="submit" className="w-full">
-          Sign Up 
+          Create Account 
         </Button>
         <Button variant="outline" className="w-full">
-          Sign Up with Google
+          Already have an account? Sign in
         </Button>
       </CardFooter>
     </Card>
