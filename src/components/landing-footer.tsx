@@ -1,5 +1,7 @@
+"use client"
 import Link from "next/link";
 import { Video } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Footer() {
   return (
@@ -82,6 +84,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <ThemeToggle />
     </footer>
   );
 }
