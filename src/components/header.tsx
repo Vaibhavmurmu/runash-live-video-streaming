@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { SettingsIcon } from "lucide-react";
+import { KeyDialog } from "@/components/key-dialog";
 
 export default function Header({
   openKeyDialog,
