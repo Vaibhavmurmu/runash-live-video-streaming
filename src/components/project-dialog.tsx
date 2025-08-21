@@ -241,7 +241,7 @@ export function ProjectDialog({ onOpenChange, ...props }: ProjectDialogProps) {
               className="underline underline-offset-2 decoration-foreground/50 text-foreground"
               href="https://github.com/runash-ai/live-video-stream-generator"
             >
-              live video streaming generator
+              live video stream generator
             </a>{" "}
             studio developed by{" "}
             <a
@@ -251,7 +251,13 @@ export function ProjectDialog({ onOpenChange, ...props }: ProjectDialogProps) {
               {" "}
               RunAsh AI Research Lab 
             </a>{" "}
-            and powered by fal.ai.
+            and powered by 
+            <a
+              className="underline underline-offset-2 decoration-foreground/50 text-foreground"
+              href="https://fal.ai"
+            >
+              {" "}
+            fal.ai
           </p>
         </DialogFooter>
       </DialogContent>
