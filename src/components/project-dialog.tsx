@@ -258,6 +258,7 @@ export function ProjectDialog({ onOpenChange, ...props }: ProjectDialogProps) {
             >
               {" "}
             fal.ai
+           </a>
           </p>
         </DialogFooter>
       </DialogContent>
