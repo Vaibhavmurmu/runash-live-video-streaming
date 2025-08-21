@@ -239,19 +239,19 @@ export function ProjectDialog({ onOpenChange, ...props }: ProjectDialogProps) {
             This is an{" "}
             <a
               className="underline underline-offset-2 decoration-foreground/50 text-foreground"
-              href="https://github.com/fal-ai-community/video-starter-kit"
+              href="https://github.com/runash-ai/live-video-stream-generator"
             >
-              open-source
+              live video streaming generator
             </a>{" "}
-            project developed by{" "}
+            studio developed by{" "}
             <a
               className="underline underline-offset-2 decoration-foreground/50 text-foreground"
-              href="https://fal.ai"
+              href="https://ai.runash.in"
             >
               {" "}
-              fal.ai
+              RunAsh AI Research Lab 
             </a>{" "}
-            and its partners.
+            and powered by fal.ai.
           </p>
         </DialogFooter>
       </DialogContent>
