@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   DropdownMenu,
@@ -7,10 +7,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ChevronUp, User, Settings, LogOut } from "lucide-react"
+} from "@/components/ui/dropdown-menu";
+import {
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ChevronUp, User, Settings, LogOut } from "lucide-react";
 
 export function UserProfile() {
   return (
@@ -23,12 +27,17 @@ export function UserProfile() {
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+                <AvatarImage
+                  src="/placeholder.svg?height=32&width=32"
+                  alt="User"
+                />
                 <AvatarFallback className="rounded-lg">RM</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">Ram Murmu</span>
-                <span className="truncate text-xs text-muted-foreground">Premium User</span>
+                <span className="truncate text-xs text-muted-foreground">
+                  Premium User
+                </span>
               </div>
               <ChevronUp className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -42,12 +51,17 @@ export function UserProfile() {
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
-                  <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+                  <AvatarImage
+                    src="/placeholder.svg?height=32&width=32"
+                    alt="User"
+                  />
                   <AvatarFallback className="rounded-lg">RM</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">Ram Murmu</span>
-                  <span className="truncate text-xs text-muted-foreground">ram@runash.ai</span>
+                  <span className="truncate text-xs text-muted-foreground">
+                    ram@runash.ai
+                  </span>
                 </div>
               </div>
             </DropdownMenuLabel>
@@ -69,5 +83,5 @@ export function UserProfile() {
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  )
+  );
 }

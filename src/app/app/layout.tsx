@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import "../globals.css";
@@ -17,14 +17,14 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased dark">
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+
         <Analytics />
       </body>
     </html>

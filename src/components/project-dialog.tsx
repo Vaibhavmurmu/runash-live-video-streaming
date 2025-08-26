@@ -249,16 +249,16 @@ export function ProjectDialog({ onOpenChange, ...props }: ProjectDialogProps) {
               href="https://ai.runash.in"
             >
               {" "}
-              RunAsh AI Research Lab 
+              RunAsh AI Research Lab
             </a>{" "}
-            and powered by 
+            and powered by
             <a
               className="underline underline-offset-2 decoration-foreground/50 text-foreground"
               href="https://fal.ai"
             >
               {" "}
-            fal.ai
-           </a>
+              fal.ai
+            </a>
           </p>
         </DialogFooter>
       </DialogContent>
