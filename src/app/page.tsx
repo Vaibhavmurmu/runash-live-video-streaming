@@ -3,6 +3,7 @@ import Hero from "@/components/landing-hero";
 import Features from "@/components/landing-features";
 import Community from "@/components/landing-community";
 import Footer from "@/components/landing-footer";
+import MobileBottomBar from "@/components/mobile-bottom-bar";
 
 export default function IndexPage() {
   return (
@@ -14,6 +15,7 @@ export default function IndexPage() {
         <Community />
       </main>
       <Footer />
+  <MobileBottomBar />
     </div>
   );
 }
