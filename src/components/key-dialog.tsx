@@ -24,7 +24,9 @@ export function KeyDialog({ onOpenChange, open, ...props }: KeyDialogProps) {
   };
 
   const handleSave = () => {
-    localStorage.setItem("falKey", falKey);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("falKey", falKey);
+    }
     handleOnOpenChange(false);
     setFalKey("");
   };

@@ -4,12 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { SettingsIcon } from "lucide-react";
 import { KeyDialog } from "@/components/key-dialog";
+import { useEffect, useState } from "react";
 
 export default function Header({
   openKeyDialog,
 }: {
   openKeyDialog?: () => void;
 }) {
+  const [hasKey, setHasKey] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setHasKey(!!localStorage.getItem("falKey"));
+  }, []);
   return (
     <header className="px-4 py-2 flex justify-between items-center border-b border-border">
       <h1 className="text-lg font-medium">
@@ -41,10 +48,9 @@ export default function Header({
             className="relative"
             onClick={openKeyDialog}
           >
-            {typeof localStorage !== "undefined" &&
-              !localStorage?.getItem("falKey") && (
-                <span className="dark:bg-orange-400 bg-orange-600 w-2 h-2 rounded-full absolute top-1 right-1"></span>
-              )}
+            {hasKey !== null && !hasKey && (
+              <span className="dark:bg-orange-400 bg-orange-600 w-2 h-2 rounded-full absolute top-1 right-1"></span>
+            )}
             <SettingsIcon className="w-6 h-6" />
           </Button>
         )}

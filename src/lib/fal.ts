@@ -3,7 +3,12 @@
 import { createFalClient } from "@fal-ai/client";
 
 export const fal = createFalClient({
-  credentials: () => localStorage?.getItem("falKey") as string,
+  // Don't access `localStorage` on the server. Fallback to empty string
+  // when window is not available (SSR / build time).
+  credentials: () =>
+    typeof window !== "undefined"
+      ? (localStorage.getItem("falKey") as string)
+      : "",
   proxyUrl: "/api/fal",
 });
 
