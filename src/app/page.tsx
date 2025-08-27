@@ -15,7 +15,7 @@ export default function IndexPage() {
         <Community />
       </main>
       <Footer />
-  <MobileBottomBar />
+      <MobileBottomBar />
     </div>
   );
 }

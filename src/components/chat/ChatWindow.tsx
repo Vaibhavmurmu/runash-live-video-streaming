@@ -19,7 +19,10 @@ export default function ChatWindow() {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    ref.current?.scrollTo({ top: ref.current.scrollHeight, behavior: "smooth" });
+    ref.current?.scrollTo({
+      top: ref.current.scrollHeight,
+      behavior: "smooth",
+    });
   }, [messages]);
 
   const send = async () => {
@@ -30,7 +33,10 @@ export default function ChatWindow() {
 
     // Start assistant placeholder
     const assistantId = uid();
-    setMessages((m) => [...m, { id: assistantId, role: "assistant", content: "" }]);
+    setMessages((m) => [
+      ...m,
+      { id: assistantId, role: "assistant", content: "" },
+    ]);
     setIsStreaming(true);
 
     try {
@@ -48,7 +54,11 @@ export default function ChatWindow() {
       const reader = res.body?.getReader();
       if (!reader) {
         const text = await res.text();
-        setMessages((m) => m.map((x) => (x.id === assistantId ? { ...x, content: x.content + text } : x)));
+        setMessages((m) =>
+          m.map((x) =>
+            x.id === assistantId ? { ...x, content: x.content + text } : x,
+          ),
+        );
         setIsStreaming(false);
         return;
       }
@@ -58,10 +68,17 @@ export default function ChatWindow() {
         const { done, value } = await reader.read();
         if (done) break;
         const chunk = decoder.decode(value);
-        setMessages((m) => m.map((x) => (x.id === assistantId ? { ...x, content: x.content + chunk } : x)));
+        setMessages((m) =>
+          m.map((x) =>
+            x.id === assistantId ? { ...x, content: x.content + chunk } : x,
+          ),
+        );
       }
     } catch (err) {
-      setMessages((m) => [...m, { id: uid(), role: "assistant", content: "Error: " + String(err) }]);
+      setMessages((m) => [
+        ...m,
+        { id: uid(), role: "assistant", content: "Error: " + String(err) },
+      ]);
     } finally {
       setIsStreaming(false);
     }
@@ -71,11 +88,20 @@ export default function ChatWindow() {
     <div className="bg-white/5 rounded-lg p-4 h-[70vh] flex flex-col">
       <div className="flex-1 overflow-auto mb-4" ref={ref}>
         {messages.length === 0 && (
-          <div className="text-center text-gray-400 mt-12">Start a conversation</div>
+          <div className="text-center text-gray-400 mt-12">
+            Start a conversation
+          </div>
         )}
         <div className="flex flex-col gap-4">
           {messages.map((m) => (
-            <div key={m.id} className={m.role === "user" ? "self-end bg-white/10 p-3 rounded-lg max-w-[70%]" : "self-start bg-white/3 p-3 rounded-lg max-w-[70%]"}>
+            <div
+              key={m.id}
+              className={
+                m.role === "user"
+                  ? "self-end bg-white/10 p-3 rounded-lg max-w-[70%]"
+                  : "self-start bg-white/3 p-3 rounded-lg max-w-[70%]"
+              }
+            >
               <div className="whitespace-pre-wrap">{m.content}</div>
             </div>
           ))}
@@ -96,7 +122,11 @@ export default function ChatWindow() {
           placeholder="Type a message..."
           rows={1}
         />
-        <button className="bg-white text-black px-4 py-2 rounded-md" onClick={send} disabled={isStreaming}>
+        <button
+          className="bg-white text-black px-4 py-2 rounded-md"
+          onClick={send}
+          disabled={isStreaming}
+        >
           Send
         </button>
       </div>
