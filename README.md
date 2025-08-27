@@ -90,3 +90,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Deployment
 
 The easiest way to deploy your application is through [Vercel](https://vercel.com/new?utm_source=fal-ai&utm_medium=default-template&utm_campaign=video-starter-kit).
+
+## Supabase
+
+To enable the built-in sign-in page using Supabase Auth, set the following environment variables in your Next.js environment (e.g. `.env.local`):
+
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+When these are present the `/sign-in` route will render the Supabase Auth UI. Otherwise it falls back to the local `LoginForm`.
